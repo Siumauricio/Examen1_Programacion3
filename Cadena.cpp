@@ -5,11 +5,11 @@ using namespace std;
 
 Cadena::Cadena(const char*s) {
 	cadena = new char[strlen(s)];
-	strcpy(cadena, s);
+	strcpy(cadena,s);
 }
-Cadena::Cadena() {
-		cadena = new char[1];
-		cadena[0] = '\0';
+Cadena::Cadena(void) {
+		cadena = new char[1000];
+		strcpy(cadena, "");
 }
 Cadena operator+(const Cadena& ca1,const Cadena& ca2) {
 	Cadena ca;
@@ -21,16 +21,33 @@ ostream& operator<<(ostream& out, const Cadena& c) {
 	return out;
 }
 
-bool strcmp(const Cadena& c2) {
-	
-	return true;
-}
-Cadena substr(int pos,int length) {
-	Cadena cadena;
-	//length = strlen(cadena);
-	for (int i = 0; i < length; i++)
+int Cadena:: strcmp(const Cadena& c2) {
+	for (int i = 0; i < longitud; i++)
 	{
+		if (cadena[i]!=c2.cadena[i])
+		{
+			if (cadena[i]<c2.cadena[i])
+			{
+				return -1;
+			}
+			else {
+				return 1;
+			}
+		}
+		return 0;
+	}
+}
+Cadena Cadena::substr(int pos,int length) {
+	int x = 0;
 
+	Cadena cadena;
+	cadena.longitud = length;
+	for (int i = pos; i <  length; i++)
+	{
+		x++;
+		cadena.cadena[x] = cadena[i];
 	}
 
+	return cadena;
 }
+
