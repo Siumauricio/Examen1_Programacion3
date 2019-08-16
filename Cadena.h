@@ -11,7 +11,7 @@ public:
 	Cadena(void);
 	friend Cadena operator +(const Cadena& ca1, const Cadena& ca2);
 	friend ostream& operator<<(ostream& out, const Cadena& c);
-	bool strcmp(const Cadena& c1);
+	int strcmp(const Cadena& c1);
 	Cadena substr(int pos,int length);
 
 private:
