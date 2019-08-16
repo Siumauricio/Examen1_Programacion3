@@ -8,7 +8,7 @@ Cadena::Cadena(const char*s) {
 	strcpy(cadena,s);
 }
 Cadena::Cadena(void) {
-		cadena = new char[1000];
+		cadena = new char[1];
 		strcpy(cadena, "");
 }
 Cadena operator+(const Cadena& ca1,const Cadena& ca2) {
