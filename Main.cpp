@@ -3,12 +3,25 @@
 using namespace std;
 
 int main() {
-	Cadena ca1("a");
-	Cadena ca2;
-	Cadena ca3("Mundo");
-	ca2 = ca1 + ca3;
+	Cadena c0("Hola");
+	Cadena c1();
+	Cadena c2(c0);
+	Cadena c3("Mundo");
 
-	cout << "ca1" << ca1 << "ca3:" << ca3 << endl;
+	cout << "c0: " << c0 << "\nc1: " << c1 << "\nc2: " << c2 << "\nc3:" << c3 << endl;
+	
+	if (c2.strcmp(c3) == 0)
+		cout << "c2 y c3 son iguales\n";
+	else if (c2.strcmp(c3) < 0)
+		cout << "c2 es menor que c3\n";
+	else
+		cout << "c2 es mayor que c3\n";
+
+	Cadena c4 = c0 + c3;
+	cout << "c4: " << c4 << endl;
+
+	Cadena c5 = c4.substr(4, 5);
+	cout << "c5: " << c5 << endl;
 
 	return 0;
 }
